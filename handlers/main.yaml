@@ -1,0 +1,12 @@
+---
+- name: "(systemd: Debian/Ubuntu) reload lighttpd unit"
+  systemd:
+    name: lighttpd.service
+    state: reloaded
+  become: yes
+
+- name: "(systemd: Debian/Ubuntu) reload iptables unit"
+  systemd:
+    name: iptables
+    state: restarted
+  become: yes

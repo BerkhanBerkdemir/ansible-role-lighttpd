@@ -1,0 +1,12 @@
+---
+- name: "(apt: Debian/Ubuntu) ensure lighttpd is installed"
+  apt:
+    name: "lighttpd={{ lighttpd_version }}"
+    state: present
+  become: yes
+
+- include_tasks: configure/systemd.yaml
+
+- include_tasks: configure/directories.yaml
+
+- include_tasks: configure/iptables.yaml

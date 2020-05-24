@@ -1,0 +1,6 @@
+---
+- name: "(systemd: Debian/Ubuntu) ensure lighttpd starts on boot"
+  systemd:
+    name: lighttpd.service
+    enabled: yes
+  become: yes

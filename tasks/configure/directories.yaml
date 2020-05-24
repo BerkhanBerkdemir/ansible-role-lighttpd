@@ -1,0 +1,9 @@
+---
+- name: "(file: Debian/Ubuntu) ensure sites-available and sites-enabled directories exist"
+  file:
+    path: "/etc/lighttpd/{{ item }}"
+    state: directory
+  with_items:
+    - sites-available
+    - sites-enabled
+  become: yes
